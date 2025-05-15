@@ -28,12 +28,25 @@ function novaTarefa() {
         botao.style.display = "flex";
         botao.style.alignItems = "center";
         botao.style.justifyContent = "center";
-        botao.style.marginLeft = "20px";
+        botao.style.marginRight = "50px";
 
         // Adicionar evento de clique ao botão
         botao.addEventListener("click", function () {
             lista.removeChild(li); // Remove o item da lista
+            botao.style.color = "green";
         });
+
+        // Gambiarra para usar o estilo hover no botão
+        botao.addEventListener('mouseover', (event) => {
+            botao.style.backgroundColor = 'rgb(0, 189, 0)';
+            botao.style.color = 'white';
+        });
+
+        botao.addEventListener('mouseout', (event) => {
+            botao.style.backgroundColor = 'green';
+            botao.style.color = 'white';
+        });
+        // Gambiarra para usar o estilo hover no botão
 
         // Definir o texto do item de lista
         li.textContent = input.value;
@@ -49,4 +62,6 @@ function novaTarefa() {
     } else {
         alert("Por favor, adicione uma tarefa.");
     }
+
+    //#DSL
 }
